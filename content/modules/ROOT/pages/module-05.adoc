@@ -26,7 +26,8 @@ The numbers in the filenames (10, 30, 31, 99) determine the loading order. Lower
 **5.2** Before applying the sample rules, let's clear any existing custom rules:
 [source,bash,role="execute",subs=attributes+]
 ----
-sudo rm -f /etc/audit/rules.d/*
+sudo rm -f /etc/audit/rules.d/*.rules
+
 ----
 
 [IMPORTANT]
@@ -39,9 +40,13 @@ This removes all rules from `/etc/audit/rules.d/`. Only do this in a lab environ
 [source,bash,role="execute",subs=attributes+]
 ----
 sudo cp /usr/share/audit-rules/10-base-config.rules /etc/audit/rules.d/
+
 sudo cp /usr/share/audit-rules/30-stig.rules /etc/audit/rules.d/
+
 sudo cp /usr/share/audit-rules/31-privileged.rules /etc/audit/rules.d/
+
 sudo cp /usr/share/audit-rules/99-finalize.rules /etc/audit/rules.d/
+
 ----
 
 
